@@ -1,0 +1,7 @@
+{
+	success: true,
+	usuarios: [
+		{id: 1, nome: 'Luiz', email: 'tonyzrp@gmail.com'},
+		{id: 2, nome: 'Teste', email: 'teste@teste.com'}
+	]
+}
