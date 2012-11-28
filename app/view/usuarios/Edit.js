@@ -3,6 +3,7 @@ Ext.define('CrudTest.view.usuarios.Edit', {
 	alias: 'widget.usuariosedit',
 	title: 'Editar Usuários',
 	layout: 'fit',
+	modal: true,
 	autoShow: true,
 
 	initComponent: function() {
