@@ -1,6 +1,6 @@
 # CRUD com ExtJS e PHP
 
-Esse é um exemplo de CRUD com ExtJS. Feito seguindo o tutorial [da senha](http://www.sencha.com/learn/the-mvc-application-architecture/).
+Esse é um exemplo de CRUD com ExtJS. Feito seguindo o tutorial [da sencha](http://www.sencha.com/learn/the-mvc-application-architecture/).
 
 ## Lembrete
 
