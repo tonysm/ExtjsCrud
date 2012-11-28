@@ -7,7 +7,8 @@ Ext.define('CrudTest.store.Usuarios', {
 		api: {
 			read: 'data/usuarios.json',
 			update: 'data/updateUsuarios.json',
-			create: 'data/updateUsuarios.json'
+			create: 'data/addUsuarios.json',
+			destroy: 'data/deleteUsuarios.json'
 		},
 		reader: {
 			type: 'json',

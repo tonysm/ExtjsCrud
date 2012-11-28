@@ -20,6 +20,9 @@ Ext.define('CrudTest.controller.Usuarios', {
 			},
 			'usuarioslist button[action=add]': {
 				click: this.newUsuario
+			},
+			'usuarioslist button[action=delete]': {
+				click: this.deleteUsuarios
 			}
 		});
 	},
@@ -49,5 +52,27 @@ Ext.define('CrudTest.controller.Usuarios', {
 		view.setTitle("Novo usuário");
 
 		view.down('form').loadRecord( Ext.create('CrudTest.model.Usuario') );
+	},
+	deleteUsuarios: function( btn ) {
+		var grid = btn.up('grid'),
+			selection = grid.getSelectionModel().getSelection(),
+			store = grid.getStore();
+
+		// se nenhum item estiver selecionado
+		if(selection.length == 0) {
+			Ext.MessageBox.alert('Atenção', 'Selecione algum item para excluir.');
+			return;
+		}
+
+		// confirmar antes de deletar
+		Ext.MessageBox.confirm('Atenção', 'Tem certeza que deseja excluir os itens selecionados?', function( opt ) {
+			if(opt == 'yes') {
+				for(var i in selection) {
+					store.remove(selection[i]);
+				}
+			}
+
+			store.sync();
+		});
 	}
 });
