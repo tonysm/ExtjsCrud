@@ -6,6 +6,9 @@ Ext.Loader.setConfig({
 Ext.application({
 	name: 'CrudTest',
 	appFolder: 'app',
+	requires: [
+		'Ext.container.Viewport'
+	],
 	controllers: ['Usuarios'],
 	launch: function() {
 		Ext.create('Ext.container.Viewport', {

@@ -6,7 +6,8 @@ Ext.define('CrudTest.store.Usuarios', {
 		type: 'ajax',
 		api: {
 			read: 'data/usuarios.json',
-			update: 'data/updateUsuarios.json'
+			update: 'data/updateUsuarios.json',
+			create: 'data/updateUsuarios.json'
 		},
 		reader: {
 			type: 'json',

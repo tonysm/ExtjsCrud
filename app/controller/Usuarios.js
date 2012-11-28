@@ -17,6 +17,9 @@ Ext.define('CrudTest.controller.Usuarios', {
 			},
 			'usuariosedit button[action=save]': {
 				click: this.updateUsuario
+			},
+			'usuarioslist button[action=add]': {
+				click: this.newUsuario
 			}
 		});
 	},
@@ -35,6 +38,16 @@ Ext.define('CrudTest.controller.Usuarios', {
 		record.set(values);
 
 		win.close();
+		
+		if(record.get('id') == undefined) {
+			this.getUsuariosStore().add(record);
+		}
 		this.getUsuariosStore().sync();
+	},
+	newUsuario: function( btn ) {
+		var view = Ext.widget('usuariosedit');
+		view.setTitle("Novo usuário");
+
+		view.down('form').loadRecord( Ext.create('CrudTest.model.Usuario') );
 	}
 });

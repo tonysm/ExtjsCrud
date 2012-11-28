@@ -1,6 +1,9 @@
 Ext.define('CrudTest.view.usuarios.Edit', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.usuariosedit',
+	requires: [
+		'Ext.form.Panel'
+	],
 	title: 'Editar Usuários',
 	layout: 'fit',
 	modal: true,
