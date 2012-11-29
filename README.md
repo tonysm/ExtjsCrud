@@ -2,7 +2,7 @@
 
 Esse é um exemplo de CRUD com ExtJS. Feito seguindo o tutorial [da sencha](http://www.sencha.com/learn/the-mvc-application-architecture/).
 
-## Lembrete
+## Instalação
 
 * Colocar o diretório com o CORE do ExtJS 4 na pasta extjs
 * Criar o banco de dados (ver SQL em php/Config/usuarios.sql)
