@@ -6,7 +6,6 @@ Ext.define('CrudTest.view.usuarios.List', {
 	alias: 'widget.usuarioslist',
 	title: 'Listagem de usuários',
 	store: 'Usuarios',
-	selType: 'cellmodel',
 	margin: 10,
 
 	initComponent: function() {

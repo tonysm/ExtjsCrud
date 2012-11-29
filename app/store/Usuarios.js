@@ -5,15 +5,27 @@ Ext.define('CrudTest.store.Usuarios', {
 	proxy: {
 		type: 'ajax',
 		api: {
-			read: 'data/usuarios.json',
+			read: 'php/index.php?control=usuarios&action=listAll',
 			update: 'data/updateUsuarios.json',
-			create: 'data/addUsuarios.json',
+			create: 'php/index.php?control=usuarios&action=save',
 			destroy: 'data/deleteUsuarios.json'
+		},
+		actionMethods: {
+			create: 'POST',
+			read: 'POST',
+			update: 'POST',
+			destroy: 'POST'
 		},
 		reader: {
 			type: 'json',
-			root: 'usuarios',
+			root: 'data',
 			successProperty: 'success'
+		},
+		writer: {
+			type: 'json',
+			writeAllFields: true,
+			root: 'data',
+			encode: true
 		}
 	}
 });
