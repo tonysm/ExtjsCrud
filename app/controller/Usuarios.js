@@ -25,6 +25,11 @@ Ext.define('CrudTest.controller.Usuarios', {
 				click: this.deleteUsuarios
 			}
 		});
+
+		this.getUsuariosStore().on('write', this.afterWrite);
+	},
+	afterWrite: function(store, opt, eOpts) {
+		store.load(opt.records);
 	},
 	editUsuario: function(grid, record) {
 		var view = Ext.widget('usuariosedit');
