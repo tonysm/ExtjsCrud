@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * retorna a configuração do banco
+ */
 return array(
 	'driver' => 'mysql',
 	'host' => 'locahost',

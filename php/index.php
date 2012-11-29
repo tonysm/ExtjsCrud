@@ -8,7 +8,7 @@ class FileNotExistsException extends Exception {}
  */
 function __autoLoad( $class ) {
 	$class = str_replace('\\', '/', $class) . ".php";
-	$class = str_replace('App', __DIR__, $class);
+	$class = str_replace('App/', __DIR__ . "/", $class);
 
 	if(!file_exists($class))
 		throw new FileNotExistsException("Arquivo não existe");

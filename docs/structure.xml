@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a11" title="">
+  <file path="Domain/Usuario.php" hash="344eb3e878153102290fa3351b91839b" package="Default">
+    <class final="false" abstract="false" namespace="App\Domain" line="8" package="Default">
+      <extends/>
+      <name>Usuario</name>
+      <full_name>\App\Domain\Usuario</full_name>
+      <docblock line="3">
+        <description>Classe que representa o modelo de usuários</description>
+        <long-description/>
+        <tag line="3" name="author" description="Luiz Messias &lt;tonyzrp@gmail.com&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="12" namespace="App\Domain" package="Default">
+        <name>$id</name>
+        <default/>
+        <docblock line="9">
+          <description/>
+          <long-description/>
+          <tag line="9" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="16" namespace="App\Domain" package="Default">
+        <name>$nome</name>
+        <default/>
+        <docblock line="13">
+          <description/>
+          <long-description/>
+          <tag line="13" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="20" namespace="App\Domain" package="Default">
+        <name>$email</name>
+        <default/>
+        <docblock line="17">
+          <description/>
+          <long-description/>
+          <tag line="17" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Domain" line="24" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="21">
+          <description>construtor</description>
+          <long-description/>
+        </docblock>
+        <argument line="24">
+          <name>$props</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Domain" line="34" package="Default">
+        <name>__get</name>
+        <full_name>__get</full_name>
+        <docblock line="29">
+          <description>método mágico __get ({@link http://www.php.net/manual/en/language.oop5.overloading.php#object.get})</description>
+          <long-description/>
+          <tag line="29" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="34">
+          <name>$prop</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Domain" line="43" package="Default">
+        <name>__set</name>
+        <full_name>__set</full_name>
+        <docblock line="37">
+          <description>método mágico __set ({@link http://www.php.net/manual/en/language.oop5.overloading.php#object.set})</description>
+          <long-description/>
+          <tag line="37" name="param" description="nome do atributo" type="string" variable="$prop">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="37" name="param" description="valor do atributo" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="43">
+          <name>$prop</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="43">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Domain" line="49" package="Default">
+        <name>toXml</name>
+        <full_name>toXml</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Domain/Usuario.php</error>
+      <critical line="9" code="50019">No short description for property $id</critical>
+      <critical line="13" code="50019">No short description for property $nome</critical>
+      <critical line="17" code="50019">No short description for property $email</critical>
+      <error line="21" code="50015">Argument $props is missing from the Docblock of __construct()</error>
+      <error line="29" code="50015">Argument $prop is missing from the Docblock of __get()</error>
+      <error line="49" code="50010">No DocBlock was found for method toXml()</error>
+    </parse_markers>
+  </file>
+  <file path="index.php" hash="d53e22f9a06f862a28fac475d061cba5" package="Default">
+    <namespace-alias name="ConnectionManager">App\Config\ConnectionManager</namespace-alias>
+    <namespace-alias name="Controller">App\Controllers\Controller</namespace-alias>
+    <include line="16" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <function namespace="global" line="9" package="Default">
+      <name>__autoLoad</name>
+      <full_name>\__autoLoad</full_name>
+      <docblock line="6">
+        <description>método mágico para controlar os requires</description>
+        <long-description/>
+      </docblock>
+      <argument line="9">
+        <name>$class</name>
+        <default/>
+        <type/>
+      </argument>
+    </function>
+    <class final="false" abstract="false" namespace="global" line="5" package="Default">
+      <extends>\Exception</extends>
+      <name>FileNotExistsException</name>
+      <full_name>\FileNotExistsException</full_name>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file index.php</error>
+      <error line="6" code="50015">Argument $class is missing from the Docblock of \__autoLoad()</error>
+      <error line="5" code="50000">No DocBlock was found for \FileNotExistsException</error>
+    </parse_markers>
+  </file>
+  <file path="Controllers/Controller.php" hash="4797b67fd95cd0f67aeaad6e6e06836a" package="Default">
+    <namespace-alias name="ConnectionManager">App\Config\ConnectionManager</namespace-alias>
+    <class final="false" abstract="false" namespace="App\Controllers" line="9" package="Default">
+      <extends/>
+      <name>Controller</name>
+      <full_name>\App\Controllers\Controller</full_name>
+      <docblock line="4">
+        <description>Classe responsável por construir os controllers</description>
+        <long-description/>
+        <tag line="4" name="author" description="Luiz Messias &lt;tonyzrp@gmail.com&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="13" namespace="App\Controllers" package="Default">
+        <name>$conn</name>
+        <default/>
+        <docblock line="10">
+          <description/>
+          <long-description/>
+          <tag line="10" name="var" description="" type="\App\Controllers\PDO">
+            <type by_reference="false">\App\Controllers\PDO</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="17" namespace="App\Controllers" package="Default">
+        <name>$data</name>
+        <default/>
+        <docblock line="14">
+          <description/>
+          <long-description/>
+          <tag line="14" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="App\Controllers" line="25" package="Default">
+        <name>factory</name>
+        <full_name>factory</full_name>
+        <docblock line="18">
+          <description>Método fábrica de controllers</description>
+          <long-description/>
+          <tag line="18" name="param" description="nome do Controller" type="string" variable="$Controller">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="18" name="return" description="" type="\App\Controllers\Controller">
+            <type by_reference="false">\App\Controllers\Controller</type>
+          </tag>
+        </docblock>
+        <argument line="25">
+          <name>$Controller</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Controllers" line="38" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="32">
+          <description>Construtor dos controllers</description>
+          <long-description>&lt;p&gt;aqui é instanciada a conexão com PDO&lt;/p&gt;</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Controllers" line="46" package="Default">
+        <name>__destruct</name>
+        <full_name>__destruct</full_name>
+        <docblock line="41">
+          <description>método destrutor</description>
+          <long-description>&lt;p&gt;aqui a conexão é encerrada&lt;/p&gt;</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="App\Controllers" line="56" package="Default">
+        <name>fail</name>
+        <full_name>fail</full_name>
+        <docblock line="49">
+          <description>método para exibir erros para os usuários</description>
+          <long-description>&lt;p&gt;ATENCAO: esse método para a execução da aplicação e imprime o JSON de falha&lt;/p&gt;</long-description>
+          <tag line="49" name="param" description="= '' texto que seguirá no JSON" type="string" variable="$text">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="56">
+          <name>$text</name>
+          <default>''</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Controllers/Controller.php</error>
+      <critical line="10" code="50019">No short description for property $conn</critical>
+      <critical line="14" code="50019">No short description for property $data</critical>
+    </parse_markers>
+  </file>
+  <file path="Controllers/Usuarios.php" hash="ea90a9a8a36d8f3915cd5acd691adae4" package="Default">
+    <namespace-alias name="Usuario">App\Domain\Usuario</namespace-alias>
+    <class final="false" abstract="false" namespace="App\Controllers" line="11" package="Default">
+      <extends>\App\Controllers\Controller</extends>
+      <name>Usuarios</name>
+      <full_name>\App\Controllers\Usuarios</full_name>
+      <docblock line="4">
+        <description>Class Usuarios Controller</description>
+        <long-description>&lt;p&gt;responsável por gerenciar as requisições referentes aos usuários&lt;/p&gt;</long-description>
+        <tag line="4" name="author" description="Luiz Messias &lt;tonyzrp@gmail.com&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Controllers" line="18" package="Default">
+        <name>listAll</name>
+        <full_name>listAll</full_name>
+        <docblock line="12">
+          <description>action listAll</description>
+          <long-description>&lt;p&gt;lista todos os usuários&lt;/p&gt;</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Controllers" line="42" package="Default">
+        <name>create</name>
+        <full_name>create</full_name>
+        <docblock line="34">
+          <description>action create</description>
+          <long-description>&lt;p&gt;responsável por adicionar os usuários
+consegue adicionar 1 ou mais usuários&lt;/p&gt;</long-description>
+          <tag line="34" name="param" description="= null arrays de usuários (stdClass)" type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="42">
+          <name>$data</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Controllers" line="74" package="Default">
+        <name>update</name>
+        <full_name>update</full_name>
+        <docblock line="66">
+          <description>action update</description>
+          <long-description>&lt;p&gt;responsável por atualizar os usuários
+consegue atualizar apenas um registro por vez, a aplicação não edita multiplos&lt;/p&gt;</long-description>
+          <tag line="66" name="param" description="= null" type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="74">
+          <name>$data</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Controllers" line="97" package="Default">
+        <name>delete</name>
+        <full_name>delete</full_name>
+        <docblock line="89">
+          <description>action delete</description>
+          <long-description>&lt;p&gt;responsável por apagar os registros de usuários
+consegue apagar um ou vários registros&lt;/p&gt;</long-description>
+          <tag line="89" name="param" description="= null Array com usuários (stdClass)" type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="97">
+          <name>$data</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="App\Controllers" line="125" package="Default">
+        <name>jsonEncode</name>
+        <full_name>jsonEncode</full_name>
+        <docblock line="120">
+          <description>método que faz o parse de objetos usuário para responsta em JSON</description>
+          <long-description/>
+          <tag line="120" name="param" description="= null" type="array" variable="$usuarios">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="125">
+          <name>$usuarios</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Controllers/Usuarios.php</error>
+    </parse_markers>
+  </file>
+  <file path="Config/ConnectionManager.php" hash="4a3583dd808f4f43f2c826ed3d34cff9" package="Default">
+    <include line="15" type="Include" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="App\Config" line="8" package="Default">
+      <extends/>
+      <name>ConnectionManager</name>
+      <full_name>\App\Config\ConnectionManager</full_name>
+      <docblock line="3">
+        <description>Classe responsável pela conexão com o banco</description>
+        <long-description/>
+        <tag line="3" name="author" description="Luiz Messias &lt;tonyzrp@gmail.com&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="App\Config" line="14" package="Default">
+        <name>connect</name>
+        <full_name>connect</full_name>
+        <docblock line="9">
+          <description>Método responsável por criar a conexão com o banco</description>
+          <long-description/>
+          <tag line="9" name="return" description="" type="\App\Config\PDO">
+            <type by_reference="false">\App\Config\PDO</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="App\Config" line="30" package="Default">
+        <name>destroy</name>
+        <full_name>destroy</full_name>
+        <docblock line="25">
+          <description>Método que encerra a conexão com o banco</description>
+          <long-description/>
+          <tag line="25" name="param" description="" type="\App\Config\PDO" variable="$conn">
+            <type by_reference="false">\App\Config\PDO</type>
+          </tag>
+        </docblock>
+        <argument line="30">
+          <name>$conn</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Config/ConnectionManager.php</error>
+    </parse_markers>
+  </file>
+  <file path="Config/database.php" hash="3e15e3016372fed5d894f1e601a6002d" package="Default">
+    <docblock line="2">
+      <description>retorna a configuração do banco</description>
+      <long-description/>
+    </docblock>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <namespace name="App" full_name="App">
+    <namespace name="Config" full_name="App\Config"/>
+    <namespace name="Controllers" full_name="App\Controllers"/>
+    <namespace name="Domain" full_name="App\Domain"/>
+  </namespace>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
