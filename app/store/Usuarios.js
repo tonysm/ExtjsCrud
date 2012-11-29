@@ -8,7 +8,7 @@ Ext.define('CrudTest.store.Usuarios', {
 			read: 'php/index.php?control=usuarios&action=listAll',
 			update: 'php/index.php?control=usuarios&action=update',
 			create: 'php/index.php?control=usuarios&action=create',
-			destroy: 'data/deleteUsuarios.json'
+			destroy: 'php/index.php?control=usuarios&action=delete'
 		},
 		actionMethods: {
 			create: 'POST',

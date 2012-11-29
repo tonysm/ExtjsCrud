@@ -46,7 +46,13 @@ class Controller {
 	public function __destruct() {
 		ConnectionManager::destroy($this->conn);
 	}
-
+	/**
+	 * método para exibir erros para os usuários
+	 * 
+	 * ATENCAO: esse método para a execução da aplicação e imprime o JSON de falha
+	 * 
+	 * @param string $text = '' texto que seguirá no JSON
+	 */
 	protected function fail( $text = '' ) {
 		$result = array(
 			'success' => false,

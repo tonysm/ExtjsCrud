@@ -31,7 +31,14 @@ class Usuarios extends Controller {
 
 		$this->jsonEncode($usuarios);
 	}
-
+	/**
+	 * action create
+	 * 
+	 * responsável por adicionar os usuários
+	 * consegue adicionar 1 ou mais usuários
+	 * 
+	 * @param array $data = null arrays de usuários (stdClass)
+	 */
 	public function create(array $data = null) {
 		$sql = "INSERT INTO usuarios (nome, email) VALUES ";
 		$dataLen = count($data);
@@ -56,7 +63,14 @@ class Usuarios extends Controller {
 
 		$this->jsonEncode();
 	}
-
+	/**
+	 * action update
+	 * 
+	 * responsável por atualizar os usuários
+	 * consegue atualizar apenas um registro por vez, a aplicação não edita multiplos
+	 * 
+	 * @param array $data = null
+	 */
 	public function update(array $data = null) {
 		$sql = "UPDATE usuarios SET nome = :nome, email = :email WHERE id = :id";
 		$usr = $data[0];
@@ -69,6 +83,36 @@ class Usuarios extends Controller {
 
 		if(!$stmt->execute())
 			$this->fail('Erro ao atualizar este usuário');
+
+		$this->jsonEncode();
+	}
+	/**
+	 * action delete
+	 * 
+	 * responsável por apagar os registros de usuários
+	 * consegue apagar um ou vários registros
+	 * 
+	 * @param array $data = null Array com usuários (stdClass)
+	 */
+	public function delete(array $data = null) {
+		$sql = "DELETE FROM usuarios WHERE id IN (";
+		foreach($data as $d) {
+			$sql .= "?";
+
+			if(end($data) !== $d) {
+				$sql .= ",";
+			}
+		}
+		$sql .= ")";
+		
+		$stmt = $this->conn->prepare($sql);
+
+		foreach($data as $key => $usr) {
+			$stmt->bindParam($key + 1, $usr->id);
+		}
+
+		if(!$stmt->execute())
+			$this->fail('Impossível deletar usuários');
 
 		$this->jsonEncode();
 	}
