@@ -32,7 +32,7 @@ class Usuarios extends Controller {
 		$this->jsonEncode($usuarios);
 	}
 
-	public function save(array $data = null) {
+	public function create(array $data = null) {
 		$sql = "INSERT INTO usuarios (nome, email) VALUES ";
 		$dataLen = count($data);
 
@@ -53,6 +53,22 @@ class Usuarios extends Controller {
 		if(!$stmt->execute()) {
 			$this->fail("Erro ao tentar inserir os usuários");
 		}
+
+		$this->jsonEncode();
+	}
+
+	public function update(array $data = null) {
+		$sql = "UPDATE usuarios SET nome = :nome, email = :email WHERE id = :id";
+		$usr = $data[0];
+
+		$stmt = $this->conn->prepare($sql);
+
+		$stmt->bindParam(':nome', $usr->nome);
+		$stmt->bindParam(':email', $usr->email);
+		$stmt->bindParam(':id', $usr->id);
+
+		if(!$stmt->execute())
+			$this->fail('Erro ao atualizar este usuário');
 
 		$this->jsonEncode();
 	}

@@ -6,8 +6,8 @@ Ext.define('CrudTest.store.Usuarios', {
 		type: 'ajax',
 		api: {
 			read: 'php/index.php?control=usuarios&action=listAll',
-			update: 'data/updateUsuarios.json',
-			create: 'php/index.php?control=usuarios&action=save',
+			update: 'php/index.php?control=usuarios&action=update',
+			create: 'php/index.php?control=usuarios&action=create',
 			destroy: 'data/deleteUsuarios.json'
 		},
 		actionMethods: {
