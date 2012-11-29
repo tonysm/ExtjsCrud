@@ -1,4 +1,10 @@
 <?php
+/**
+ * arquivo da classe controller
+ * 
+ * @since 2012-11-29
+ */
+
 namespace App\Controllers;
 use App\Config\ConnectionManager as ConnectionManager;
 /**
@@ -8,11 +14,11 @@ use App\Config\ConnectionManager as ConnectionManager;
  */
 class Controller {
 	/**
-	 * @var PDO
+	 * @var \PDO conexão com o banco
 	 */
 	protected $conn;
 	/**
-	 * @var array
+	 * @var array data da requisição
 	 */
 	protected $data;
 	/**
@@ -20,7 +26,7 @@ class Controller {
 	 * 
 	 * @param string $Controller nome do Controller
 	 * 
-	 * @return Controller
+	 * @return App\Controllers\Controller
 	 */
 	public static function factory( $Controller ) {
 		$Controller = ucfirst(strtolower($Controller));

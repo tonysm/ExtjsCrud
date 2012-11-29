@@ -1,6 +1,13 @@
 <?php
+/**
+ * arquivo do controller de usuários
+ * 
+ * @since 2012-11-29
+ */
+
 namespace App\Controllers;
 use App\Domain\Usuario as Usuario;
+
 /**
  * Class Usuarios Controller
  * 
@@ -127,7 +134,7 @@ class Usuarios extends Controller {
 		
 		if(!is_null($usuarios)) {
 			foreach($usuarios as $usr) {
-				$result['data'][] = $usr->toXml();
+				$result['data'][] = $usr->toArray();
 			}
 		}
 

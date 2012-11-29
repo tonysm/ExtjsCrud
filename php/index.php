@@ -1,10 +1,24 @@
 <?php
+/**
+ * arquivo inicial da aplicação
+ * 
+ * toda requisição deve passar por aqui
+ * 
+ */
+
 use App\Config\ConnectionManager as ConnectionManager;
 use App\Controllers\Controller as Controller;
-
+/**
+ * Classe utilizada para especificar as exceptions de requires
+ * 
+ * @author Luiz Messias <tonyzrp@gmail.com>
+ */
 class FileNotExistsException extends Exception {}
+
 /**
  * método mágico para controlar os requires
+ * 
+ * @param string $class nome da classe
  */
 function __autoLoad( $class ) {
 	$class = str_replace('\\', '/', $class) . ".php";

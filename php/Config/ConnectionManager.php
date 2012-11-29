@@ -1,4 +1,10 @@
 <?php
+/**
+ * arquivo da classe que gerencia a conexão com o banco
+ * 
+ * @since 2012-11-29
+ */
+
 namespace App\Config;
 /**
  * Classe responsável pela conexão com o banco
@@ -9,7 +15,9 @@ class ConnectionManager {
 	/**
 	 * Método responsável por criar a conexão com o banco
 	 * 
-	 * @return PDO
+	 * @return \PDO conexão do pdo
+	 * 
+	 * @link http://www.php.net/manual/en/pdo.connections.php documentação do PDO
 	 */
 	public static function connect() {
 		$config = include __DIR__ . "/database.php";
@@ -25,7 +33,9 @@ class ConnectionManager {
 	/**
 	 * Método que encerra a conexão com o banco
 	 * 
-	 * @param PDO $conn
+	 * @param \PDO $conn
+	 * 
+	 * @link http://www.php.net/manual/en/pdo.connections.php documentação do PDO
 	 */
 	public static function destroy($conn) {
 		$conn = null;
