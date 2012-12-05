@@ -15,20 +15,9 @@ use App\Controllers\Controller as Controller;
  */
 class FileNotExistsException extends Exception {}
 
-/**
- * método mágico para controlar os requires
- * 
- * @param string $class nome da classe
- */
-function __autoLoad( $class ) {
-	$class = str_replace('\\', '/', $class) . ".php";
-	$class = str_replace('App/', __DIR__ . "/", $class);
+// include do arquivo autoload.php
+require_once "autoload.php";
 
-	if(!file_exists($class))
-		throw new FileNotExistsException("Arquivo não existe");
-
-	require_once $class;
-}
 
 try {
 	$data = isset($_POST['data']) ? json_decode($_POST['data']) : null;
@@ -37,13 +26,7 @@ try {
 	// pega o controller
 	$Control = Controller::factory($_GET['control']);
 	// invoca o método
-	call_user_func(
-		array(
-			&$Control,
-			$_GET['action']
-		), 
-		$data
-	);
+	call_user_func(	array( &$Control, $_GET['action'] ), $data );
 
 } catch(FileNotExistsException $e) {
 	echo $e->getMessage();

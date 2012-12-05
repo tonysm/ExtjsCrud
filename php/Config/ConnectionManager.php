@@ -22,10 +22,17 @@ class ConnectionManager {
 	public static function connect() {
 		$config = include __DIR__ . "/database.php";
 
-		$dsn = $config['driver'] . ":hostname=" . $config['host'] . ";dbname=" . $config['dbname'];
-
 		try {
-			return new \PDO($dsn, $config['username'], $config['password']);
+			// cada driver tem um DSN diferente e deve ser implementado
+			switch ( strtolower($config['driver']) ) {
+				case 'mysql':
+					$dsn = $config['driver'] . ":hostname=" . $config['host'] . ";dbname=" . $config['dbname'];
+					return new \PDO($dsn, $config['username'], $config['password']);
+					break;
+				default:
+					die('Driver não implementado na class \\App\\Config\\ConnectionManager::connect()');
+					break;
+			}
 		} catch(PDOException $e) {
 			die('Impossível conectar ao banco!');
 		}
