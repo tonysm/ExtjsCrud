@@ -5,6 +5,9 @@
  * toda requisição deve passar por aqui
  * 
  */
+ 
+// include do arquivo autoload.php
+require_once "autoload.php";
 
 use App\Config\ConnectionManager as ConnectionManager;
 use App\Controllers\Controller as Controller;
@@ -14,9 +17,6 @@ use App\Controllers\Controller as Controller;
  * @author Luiz Messias <tonyzrp@gmail.com>
  */
 class FileNotExistsException extends Exception {}
-
-// include do arquivo autoload.php
-require_once "autoload.php";
 
 
 try {
